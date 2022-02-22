@@ -14,8 +14,3 @@ export const App = () => {
     </AppContainer>
   )
 }
-
-// const coco: React.CSSProperties = {
-//   backgroundColor: 'red',
-//   margin: '0'
-// }
