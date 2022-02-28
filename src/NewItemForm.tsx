@@ -7,7 +7,7 @@ type NewItemFormProps = {
 }
 
 export const NewItemForm = ({ onAdd }: NewItemFormProps) => {
-  const [text, setText ] = useState("");
+  const [text, setText] = useState("");
   const inputRef = useFocus();
   const handleAddText = (
     event: React.KeyboardEvent<HTMLInputElement>
