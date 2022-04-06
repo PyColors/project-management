@@ -12,10 +12,10 @@ import { moveList, addTask } from "./state/actions";
 type ColumnProps = {
   text: string
   id: string
-  children?: React.ReactNode
+  isPreview?: boolean
 }
 
-export const Column = ({ text, id }: ColumnProps) => {
+export const Column = ({ text, id, isPreview }: ColumnProps) => {
   const { draggedItem, getTasksByListId, dispatch } = useAppState();
   const tasks = getTasksByListId(id);
 
@@ -42,8 +42,9 @@ export const Column = ({ text, id }: ColumnProps) => {
 
   return (
     <ColumnContainer 
+      isPreview={isPreview}
       ref={ref}
-      isHidden={isHidden(draggedItem, "COLUMN", id)}
+      isHidden={isHidden(draggedItem, "COLUMN", id, isPreview)}
     >
       <ColumnTitle>{text}</ColumnTitle>
       {tasks.map((task) => (
